@@ -64,7 +64,10 @@ def main(obj_names, args):
         teacher_model = ReconstructiveSubNetwork(in_channels=3,
                                                  out_channels=3,
                                                  base_width=128)
-        model_best_recon_weights_path = './teacher_model_checkpoints/' + obj_name + '_best_recon.pckl'  # ⬅️ 我的的權重路徑
+        # recon_path = f'./DRAEM_checkpoints/DRAEM_seg_large_ae_large_0.0001_800_bs8_' + obj_name + '_'
+        # checkpoint_path = recon_path + ".pckl"
+        # teacher_recon_ckpt = torch.load(checkpoint_path,
+        model_best_recon_weights_path = './DRAEM_checkpoints/DRAEM_seg_large_ae_large_0.0001_800_bs8_' + obj_name + '_recon_path.pckl'  # ⬅️ 我的的權重路徑
         if not os.path.exists(model_best_recon_weights_path):
             print(
                 f"❌ 錯誤: 未找到模型權重檔案: {model_best_recon_weights_path}，請檢查路徑或訓練是否完成。"
@@ -79,7 +82,10 @@ def main(obj_names, args):
         student_seg_model = DiscriminativeSubNetwork(in_channels=6,
                                                      out_channels=2,
                                                      base_channels=64)
-        model_best_seg_weights_path = './teacher_model_checkpoints/' + obj_name + '_best_seg.pckl'  # ⬅️ 我的的權重路徑
+        # seg_path = f'./DRAEM_checkpoints/DRAEM_seg_large_ae_large_0.0001_800_bs8_' + obj_name + '__seg'
+        # checkpoint_seg_path = seg_path + ".pckl"
+        # teacher_seg_ckpt = torch.load(checkpoint_seg_path,
+        model_best_seg_weights_path = './DRAEM_checkpoints/DRAEM_seg_large_ae_large_0.0001_800_bs8_' + obj_name + '__seg.pckl'  # ⬅️ 我的的權重路徑
         if not os.path.exists(model_best_seg_weights_path):
             print(
                 f"❌ 錯誤: 未找到模型權重檔案: {model_best_seg_weights_path}，請檢查路徑或訓練是否完成。"
