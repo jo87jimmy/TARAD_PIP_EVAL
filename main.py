@@ -67,7 +67,7 @@ def main(obj_names, args):
         # recon_path = f'./DRAEM_checkpoints/DRAEM_seg_large_ae_large_0.0001_800_bs8_' + obj_name + '_'
         # checkpoint_path = recon_path + ".pckl"
         # teacher_recon_ckpt = torch.load(checkpoint_path,
-        model_best_recon_weights_path = './DRAEM_checkpoints/DRAEM_seg_large_ae_large_0.0001_800_bs8_' + obj_name + '_recon_path.pckl'  # ⬅️ 我的的權重路徑
+        model_best_recon_weights_path = './DRAEM_checkpoints/DRAEM_seg_large_ae_large_0.0001_800_bs8_' + obj_name + '_.pckl'  # ⬅️ 我的的權重路徑
         if not os.path.exists(model_best_recon_weights_path):
             print(
                 f"❌ 錯誤: 未找到模型權重檔案: {model_best_recon_weights_path}，請檢查路徑或訓練是否完成。"
